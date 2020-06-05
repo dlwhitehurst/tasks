@@ -6,8 +6,6 @@ from flask import Flask, jsonify, abort, make_response, request
 # Swagger ( https://editor.swagger.io/ )
 from flask_swagger_ui import get_swaggerui_blueprint
 
-from errors import *
-
 app = Flask(__name__)
 
 tasks = [
