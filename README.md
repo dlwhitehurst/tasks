@@ -1,4 +1,5 @@
 # Python Flask REST API for Tasks
+[![build status](http://img.shields.io/travis/dlwhitehurst/tasks/master.svg?style=flat)](https://travis-ci.org/dlwhitehurst/tasks)
 
 ## Software Configuration Management (SCM)
 This repo can be cloned as follows:
