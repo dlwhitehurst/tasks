@@ -50,3 +50,8 @@ To obtain a listing of all Tasks, call GET /api/v1/tasks:
         }
       ]
     }
+
+## Swagger REST API Specification
+When the application is running, a Swagger API Console is available at:
+
+[http://localhost:5000/swagger](http://localhost:5000/swagger)
