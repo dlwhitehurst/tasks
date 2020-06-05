@@ -1,11 +1,17 @@
 # Python Flask REST API for Tasks
 
 ## Software
-Clone this repo with `https://github.com/dlwhitehurst/tasks.git`
+Clone this repo:
+```
+   $ git clone https://github.com/dlwhitehurst/tasks.git
+```
 
 ## Configure and Run
 First obtain the required Python modules using pip to install:
-` pip install -r requirements.txt`
-
+``` 
+   $ pip install -r requirements.txt`
+```
 Next, run the application with:
-` python app.py` 
+```
+   $ python app.py
+``` 
