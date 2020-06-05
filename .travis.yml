@@ -13,3 +13,6 @@ env:
 install:
 - pip install -r $REQUIRE
 
+script:
+- pytest test.py
+
