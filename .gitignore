@@ -1,0 +1,6 @@
+# what to ignore, that it the question
+*.pyc
+.DS_Store
+env
+venv
+.idea/
