@@ -1,0 +1,15 @@
+language: python
+
+# sudo false implies containerized builds
+sudo: false
+
+python:
+  - 3.7
+
+env:
+  global:
+    - REQUIRE="requirements.txt"
+
+install:
+- pip install -r $REQUIRE
+
