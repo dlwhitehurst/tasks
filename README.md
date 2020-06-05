@@ -24,6 +24,7 @@ Next, run the application with:
 - DELETE /api/v1/tasks/{taskId}
 
 ## Command-line testing
+To obtain a listing of all Tasks, call GET /api/v1/tasks:
 
     curl -i -X GET "http://localhost:5000/api/v1/tasks"
     ---
