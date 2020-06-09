@@ -1,10 +1,12 @@
 #!flask/bin/python
+import unicode
 
 # Flask
 from flask import Flask, jsonify, abort, make_response, request
 
 # Swagger ( https://editor.swagger.io/ )
 from flask_swagger_ui import get_swaggerui_blueprint
+
 
 app = Flask(__name__)
 
@@ -43,14 +45,15 @@ app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
 #----------------------------------------------------------------------------#
 @app.route('/api/v1/tasks', methods=['GET'])
 def get_tasks():
-    return jsonify({'tasks': tasks})
+    return {'tasks': tasks} # no need to use jsonify (less code) return dict
+#    return jsonify({'tasks': tasks})
 
 @app.route('/api/v1/tasks/<int:task_id>', methods=['GET'])
 def get_task(task_id):
     task = [task for task in tasks if task['id'] == task_id]
     if len(task) == 0:
         abort(404)
-    return jsonify({'task': task[0]})
+    return {'task': task[0]}
 
 @app.route('/api/v1/tasks', methods=['POST'])
 def create_task():
@@ -63,7 +66,7 @@ def create_task():
         'done': False
     }
     tasks.append(task)
-    return jsonify({'task': task}), 201
+    return {'task': task}, 201
 
 @app.route('/api/v1/tasks/<int:task_id>', methods=['PUT'])
 def update_task(task_id):
@@ -81,7 +84,7 @@ def update_task(task_id):
     task[0]['title'] = request.json.get('title', task[0]['title'])
     task[0]['description'] = request.json.get('description', task[0]['description'])
     task[0]['done'] = request.json.get('done', task[0]['done'])
-    return jsonify({'task': task[0]})
+    return {'task': task[0]}
 
 @app.route('/api/v1/tasks/<int:task_id>', methods=['DELETE'])
 def delete_task(task_id):
@@ -89,7 +92,7 @@ def delete_task(task_id):
     if len(task) == 0:
         abort(404)
     tasks.remove(task[0])
-    return jsonify({'result': True})
+    return {'result': True}
 
 #----------------------------------------------------------------------------#
 # Error Handling.
