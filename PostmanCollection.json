@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "9cbb0556-6ad2-4015-8a53-5bb1f69ec494",
+		"name": "Tasks",
+		"description": "This is the Postman Collection for the Tasks API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"tasks"
+					]
+				},
+				"description": "This GET request gets all Task objects."
+			},
+			"response": []
+		},
+		{
+			"name": "GET a Task by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/tasks/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"2"
+					]
+				},
+				"description": "This GET request, gets a single Task object by its id."
+			},
+			"response": []
+		},
+		{
+			"name": "POST and create a new Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Write a book\",\n  \"description\": \"This task captures the need to write a new book.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"tasks"
+					]
+				},
+				"description": "This POST creates a new Task object."
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Task by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/tasks/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"2"
+					]
+				},
+				"description": "This DELETE will remove a Task object by its id."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

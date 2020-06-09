@@ -1,5 +1,4 @@
 #!flask/bin/python
-import unicode
 
 # Flask
 from flask import Flask, jsonify, abort, make_response, request
